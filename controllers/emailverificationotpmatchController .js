@@ -13,7 +13,7 @@ const emailverificationotpmatchController = async (req, res) => {
             { new: true }
           );
           
-      res.send({ success: "OTP Matched" });
+      res.send({ success: true, message: "OTP Matched" });
     } else {
       res.send({ error: "OTP Not Matched" });
     }

@@ -16,6 +16,10 @@ const usersSchema = new Schema({
         type: String,
         require: true
     },
+    paymentID:{
+        type: String,
+        require: true
+    },
     image:{
         data: Buffer,
         contentType: String
@@ -27,7 +31,7 @@ const usersSchema = new Schema({
     role:{
         type: String,
         default: "student",
-        enum:["student", "member"]
+        enum:["student", "admin", "teacher"]
     },
     randomOtp:{
         type: String

@@ -16,7 +16,7 @@ const loginController = async (req, res) => {
 
     if (isEmailExist.length > 0) {
       if (!isEmailExist[0].emailVerified == true) {
-        return res.send({ otp: "Please verify your ID" });
+        return res.send({ otp: "Please verify your ID", email: isEmailExist[0].email });
       } else {
         bcrypt
           .compare(password, isEmailExist[0].password)
